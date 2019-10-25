@@ -1,0 +1,13 @@
+@import "./config/reset.scss";
+@import "./config/variables.scss";
+@import "./config/typography.scss";
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $font-size-normal;
+  font-family: "IBM Plex Mono", monospace; // font-weight: 400 / 600
+  background: $color-bg-light;
+}
