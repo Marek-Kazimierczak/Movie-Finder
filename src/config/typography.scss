@@ -2,6 +2,10 @@
 
 h1 {
   font-size: $font-size-extra-large;
+
+  @media screen and (max-width: map-get($breakpoints, sm)) {
+    font-size: $font-size-extra-large-mobile;
+  }
 }
 
 h2 {
@@ -9,6 +13,10 @@ h2 {
   font-weight: $font-weight-bold;
   color: $color-primary;
   text-transform: uppercase;
+
+  @media screen and (max-width: map-get($breakpoints, sm)) {
+    font-size: $font-size-large-mobile;
+  }
 }
 
 h1,
@@ -20,4 +28,8 @@ h2 {
 p {
   font-size: $font-size-normal;
   margin-bottom: $main-padding;
+
+  @media screen and (max-width: map-get($breakpoints, sm)) {
+    font-size: $font-size-normal-mobile;
+  }
 }
