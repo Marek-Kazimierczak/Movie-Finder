@@ -7,7 +7,7 @@ const MovieGenre = () => {
   return (
     <Article>
       <Heading text="Rating" />
-      <RatingBar rating={7.5} />
+      <RatingBar />
     </Article>
   );
 };

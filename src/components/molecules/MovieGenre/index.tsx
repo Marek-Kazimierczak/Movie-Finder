@@ -1,15 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import Article from "../../atoms/Article";
 import Heading from "../../atoms/Heading";
 import Paragraph from "../../atoms/Paragraph";
 
-const description = "Action, Science Fiction, Romance";
-
 const MovieGenre = () => {
+  const [genreList, setGenreList] = useState("");
+
+  const movie = useSelector((state: any) => state.activeMovie);
+  const genres = useSelector((state: any) => state.genres);
+
+  useEffect(() => {
+    if (movie) {
+      const currentGenresObjects = genres.filter(
+        (gen: any, idx: number) => movie.genre_ids.indexOf(gen.id) > -1
+      );
+
+      const genreNames = currentGenresObjects.map(
+        (gen: any, idx: number) =>
+          `${gen.name}${idx < currentGenresObjects.length - 1 ? ", " : ""}`
+      );
+      setGenreList(genreNames);
+    }
+  }, [movie]);
+
   return (
     <Article>
       <Heading text="Genre" />
-      <Paragraph text={description} />
+      <Paragraph text={genreList} />
     </Article>
   );
 };

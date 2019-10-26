@@ -1,14 +1,23 @@
 import React from "react";
+import { Provider } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import reduxThunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
 import SearchBar from "../components/organisms/SearchBar";
 import MovieBox from "../components/organisms/MovieBox";
-import "./App.scss";
+import reducer from "../reducer";
+
+const createStoreWithMiddleware = composeWithDevTools(
+  applyMiddleware(reduxThunk)
+)(createStore);
+export const store = createStoreWithMiddleware(reducer);
 
 const App = () => {
   return (
-    <div className="app">
+    <Provider store={store}>
       <SearchBar />
       <MovieBox />
-    </div>
+    </Provider>
   );
 };
 
