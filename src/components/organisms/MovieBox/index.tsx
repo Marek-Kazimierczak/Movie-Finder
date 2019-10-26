@@ -7,6 +7,7 @@ import MovieTitle from "../../molecules/MovieTitle";
 import MovieOverview from "../../molecules/MovieOverview";
 import MovieGenre from "../../molecules/MovieGenre";
 import MovieRating from "../../molecules/MovieRating";
+import Spinner from "../../atoms/Spinner";
 
 const MovieBox = () => {
   return (
@@ -20,6 +21,7 @@ const MovieBox = () => {
         <MovieGenre />
         <MovieRating />
       </Section>
+      <Spinner overlay />
     </main>
   );
 };

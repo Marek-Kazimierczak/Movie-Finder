@@ -10,11 +10,11 @@ interface Props {
 const AutocompleteList = (props: Props) => {
   return (
     <ul className="search-bar__autocomplete-list">
+      {/* <AutocompleteItem text="Avatar" />
       <AutocompleteItem text="Avatar" />
       <AutocompleteItem text="Avatar" />
       <AutocompleteItem text="Avatar" />
-      <AutocompleteItem text="Avatar" />
-      <AutocompleteItem text="Avatar" />
+      <AutocompleteItem text="Avatar" /> */}
     </ul>
   );
 };

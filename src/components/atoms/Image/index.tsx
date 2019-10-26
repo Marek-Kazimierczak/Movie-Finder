@@ -5,7 +5,11 @@ import "./Image.scss";
 const Image = () => {
   return (
     <div className="movie-box__image">
-      <img src="/assets/avatar.jpg" alt="movie" />
+      <img
+        className="movie-box__image-element"
+        src="/assets/avatar2.jpg"
+        alt="movie"
+      />
     </div>
   );
 };

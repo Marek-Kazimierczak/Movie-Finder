@@ -1,8 +1,23 @@
 @import "../../../config/variables.scss";
 
 .movie-box {
-  margin-top: 200px;
+  padding: $main-padding * 3 0;
+  background: $color-bg-dark;
   @media screen and (min-width: map-get($breakpoints, sm)) {
+    margin-top: $main-padding * 2;
+    padding: 0;
     display: flex;
   }
+}
+
+.movie-box__image-wrapper,
+.movie-box__details {
+  padding: $mobile-padding;
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    padding: $main-padding;
+  }
+}
+
+.movie-box__details {
+  flex: 1 0 50%;
 }
