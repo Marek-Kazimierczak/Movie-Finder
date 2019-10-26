@@ -1,12 +1,13 @@
 import React from "react";
+import Form from "../../molecules/Form";
 import "./SearchBar.scss";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const SearchBar = (props: Props) => {
-  return <header className="search-bar">{props.children}</header>;
+const SearchBar = () => {
+  return (
+    <header className="search-bar">
+      <Form />
+    </header>
+  );
 };
 
 export default SearchBar;

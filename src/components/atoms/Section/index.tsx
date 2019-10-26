@@ -3,10 +3,11 @@ import "./Section.scss";
 
 interface Props {
   children: React.ReactNode;
+  className: string;
 }
 
 const Section = (props: Props) => {
-  return <section className="movie-box__section">{props.children}</section>;
+  return <section className={props.className}>{props.children}</section>;
 };
 
 export default Section;

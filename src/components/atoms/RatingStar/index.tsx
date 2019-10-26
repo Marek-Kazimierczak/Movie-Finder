@@ -8,9 +8,10 @@ interface Props {
 
 const RatingStar = (props: Props) => {
   return (
-    <div className="movie-box__rating-star">
-      <ReactSVG src={`/assets/icons/${props.ratingStar}.svg`} />
-    </div>
+    <ReactSVG
+      className="movie-box__rating-star"
+      src={`/assets/icons/${props.ratingStar}.svg`}
+    />
   );
 };
 

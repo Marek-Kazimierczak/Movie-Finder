@@ -31,11 +31,11 @@ const RatingBar = (props: Props) => {
       ((Math.ceil(props.rating * 2) / 2).toFixed(1) as any) % 1 === 0.5;
 
     isHalfRatingUnit ? setHalfRate(true) : setHalfRate(false);
-  }, []);
+  }, [props.rating]);
 
   useEffect(() => {
     generateRatingValues();
-  }, [activeRate, halfRate]);
+  }, [activeRate]);
 
   const ratingUnits = rating.map((rate: string, index) => (
     <RatingStar key={index} ratingStar={rate} />

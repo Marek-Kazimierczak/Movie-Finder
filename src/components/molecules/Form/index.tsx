@@ -1,14 +1,13 @@
 import React from "react";
+import Input from "../../atoms/Input";
+import Button from "../../atoms/Button";
 import "./Form.scss";
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const Form = (props: Props) => {
+const Form = () => {
   return (
     <form action="" className="search-bar__form">
-      {props.children}
+      <Input />
+      <Button />
     </form>
   );
 };
