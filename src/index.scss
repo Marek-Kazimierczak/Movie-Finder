@@ -8,6 +8,6 @@ html {
 
 body {
   font-size: $font-size-normal;
-  font-family: "IBM Plex Mono", monospace; // font-weight: 400 / 600
+  font-family: $font-family-primary;
   background: $color-bg-light;
 }

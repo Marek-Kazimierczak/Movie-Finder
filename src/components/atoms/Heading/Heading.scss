@@ -1,0 +1,10 @@
+@import "../../../config/variables.scss";
+
+.movie-box__heading {
+  color: $color-primary;
+}
+
+.movie-box__heading--large {
+  padding-bottom: $main-padding;
+  border-bottom: 2px solid $color-primary;
+}

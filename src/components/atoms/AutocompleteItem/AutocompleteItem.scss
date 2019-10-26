@@ -1,0 +1,23 @@
+@import "../../../config/variables.scss";
+
+.search-bar__autocomplete-item {
+  padding: $main-spacing * 2;
+  background: $color-bg-dark;
+  color: $color-primary;
+  font-family: $font-family-primary;
+  font-size: $font-size-normal;
+  font-weight: $font-weight-bold;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    font-size: $font-size-large;
+  }
+
+  &:hover,
+  &:active {
+    background: $color-active;
+    box-shadow: $active-item-shadow;
+    position: relative;
+    z-index: 2;
+    transition: all $transition-time ease;
+  }
+}

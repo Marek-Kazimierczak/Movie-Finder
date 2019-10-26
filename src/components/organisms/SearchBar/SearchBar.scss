@@ -1,0 +1,14 @@
+@import "../../../config/variables.scss";
+
+.search-bar {
+  position: fixed;
+  width: 100%;
+
+  z-index: 2;
+  box-shadow: $header-shadow;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    position: relative;
+    padding-top: $main-padding;
+  }
+}
