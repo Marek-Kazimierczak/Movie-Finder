@@ -1,8 +1,12 @@
 import React from "react";
 import "./AutocompleteItem.scss";
 
-const AutocompleteItem = () => {
-  return <li className="search-bar__autocomplete-item"></li>;
+interface Props {
+  text: string;
+}
+
+const AutocompleteItem = (props: Props) => {
+  return <li className="search-bar__autocomplete-item">{props.text}</li>;
 };
 
 export default AutocompleteItem;

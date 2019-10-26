@@ -1,1 +1,7 @@
 @import "../../../config/variables.scss";
+
+.search-bar {
+  position: relative;
+  z-index: 1;
+  box-shadow: $header-shadow;
+}

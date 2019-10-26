@@ -1,1 +1,8 @@
 @import "../../../config/variables.scss";
+
+.search-bar__form {
+  display: flex;
+  position: relative;
+  padding: $main-spacing;
+  background: $color-primary;
+}

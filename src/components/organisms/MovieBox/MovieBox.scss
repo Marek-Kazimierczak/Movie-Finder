@@ -1,6 +1,7 @@
 @import "../../../config/variables.scss";
 
 .movie-box {
+  margin-top: 200px;
   @media screen and (min-width: map-get($breakpoints, sm)) {
     display: flex;
   }
