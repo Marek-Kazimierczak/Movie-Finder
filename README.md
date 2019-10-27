@@ -28,3 +28,5 @@ $ yarn start
 ```
 Then your default browser will open automatically and run the app on a local server.
 Finally, you can view **Movie Finder** in the browser -  http://localhost:3000/.
+
+## This project is already deployed. You can search for your favorite movie right away in here: http://moviefinderapp.surge.sh/
