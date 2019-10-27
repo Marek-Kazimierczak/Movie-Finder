@@ -1,23 +1,27 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { applyMiddleware, createStore } from "redux";
-import reduxThunk from "redux-thunk";
-import { composeWithDevTools } from "redux-devtools-extension";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import SearchBar from "../components/organisms/SearchBar";
 import MovieBox from "../components/organisms/MovieBox";
-import reducer from "../reducer";
-
-const createStoreWithMiddleware = composeWithDevTools(
-  applyMiddleware(reduxThunk)
-)(createStore);
-export const store = createStoreWithMiddleware(reducer);
+import ErrorMessageBox from "../components/organisms/ErrorMessageBox";
+import Spinner from "../components/atoms/Spinner";
 
 const App = () => {
+  const dispatch = useDispatch();
+  const loading = useSelector((state: any) => state.loading);
+  const errorMessage = useSelector((state: any) => state.errorMessage);
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch({ type: "SET_LOADING", payload: false });
+    }, 2000);
+  }, []);
+
   return (
-    <Provider store={store}>
+    <>
       <SearchBar />
-      <MovieBox />
-    </Provider>
+      {loading && !errorMessage && <Spinner overlay />}
+      {errorMessage ? <ErrorMessageBox /> : <MovieBox />}
+    </>
   );
 };
 

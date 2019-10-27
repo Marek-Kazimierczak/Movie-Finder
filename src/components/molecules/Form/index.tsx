@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import "./Form.scss";
@@ -7,16 +7,15 @@ import AutocompleteList from "../AutocompleteList";
 
 const Form = () => {
   const [searchValue, setSearchValue] = useState("");
-  const movies = useSelector((state: any) => state.movieList);
   const dispatch = useDispatch();
 
   const handleSubmit = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    search(searchValue);
-    resetInputValue();
+    handleSearch(searchValue);
+    setSearchValue("");
   };
 
-  const search = (phrase: string) => {
+  const handleSearch = (phrase: string) => {
     dispatch({
       type: "SEARCH_MOVIES_REQUEST"
     });
@@ -32,6 +31,7 @@ const Form = () => {
         });
       })
       .catch(err => {
+        console.log("genre error", err);
         dispatch({
           type: "SEARCH_MOVIES_FAILURE",
           error: err.status
@@ -40,18 +40,14 @@ const Form = () => {
   };
 
   useEffect(() => {
-    searchValue !== "" && search(searchValue);
+    searchValue !== "" && handleSearch(searchValue);
   }, [searchValue]);
-
-  const resetInputValue = () => {
-    setSearchValue("");
-  };
 
   return (
     <form className="search-bar__form" onSubmit={handleSubmit}>
       <Input onChange={setSearchValue} value={searchValue} />
       <Button />
-      <AutocompleteList />
+      <AutocompleteList value={searchValue} />
     </form>
   );
 };

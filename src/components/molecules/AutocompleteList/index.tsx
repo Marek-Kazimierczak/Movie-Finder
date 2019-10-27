@@ -4,7 +4,11 @@ import AutocompleteItem from "../../atoms/AutocompleteItem";
 
 import "./AutocompleteList.scss";
 
-const AutocompleteList = () => {
+interface Props {
+  value: string;
+}
+
+const AutocompleteList = (props: Props) => {
   const movies = useSelector((state: any) => state.movieList);
   const errorMessage = useSelector((state: any) => state.errorMessage);
   const dispatch = useDispatch();
@@ -12,16 +16,18 @@ const AutocompleteList = () => {
   const suggestMovies =
     movies &&
     !errorMessage &&
+    props.value !== "" &&
     movies
       .map((movie: any, index: number) => (
         <AutocompleteItem
+          key={index}
+          text={movie.original_title}
           onClick={() => {
             dispatch({
               type: "GET_MOVIE",
               payload: index
             });
           }}
-          text={movie.original_title}
         />
       ))
       .slice(0, 5);

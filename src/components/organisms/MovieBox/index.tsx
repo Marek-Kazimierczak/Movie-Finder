@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import Main from "../../atoms/Main";
 import Section from "../../atoms/Section";
 import Image from "../../atoms/Image";
 import MovieTitle from "../../molecules/MovieTitle";
@@ -14,13 +15,6 @@ const GENRES_API_URL =
 
 const MovieBox = () => {
   const dispatch = useDispatch();
-  const loading = useSelector((state: any) => state.loading);
-
-  useEffect(() => {
-    setTimeout(() => {
-      dispatch({ type: "SET_LOADING", payload: false });
-    }, 3000);
-  }, []);
 
   useEffect(() => {
     fetch(GENRES_API_URL)
@@ -31,17 +25,17 @@ const MovieBox = () => {
           payload: res.genres
         });
       })
-      .catch(err =>
+      .catch(err => {
+        console.log("genre error", err);
         dispatch({
           type: "SEARCH_MOVIES_FAILURE",
           error: err.status
-        })
-      );
+        });
+      });
   }, []);
 
   return (
-    <main className="movie-box">
-      {loading && <Spinner overlay />}
+    <Main className="movie-box">
       <Section className="movie-box__image-wrapper">
         <Image />
       </Section>
@@ -51,7 +45,7 @@ const MovieBox = () => {
         <MovieGenre />
         <MovieRating />
       </Section>
-    </main>
+    </Main>
   );
 };
 

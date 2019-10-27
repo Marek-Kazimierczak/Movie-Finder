@@ -8,7 +8,7 @@ const MovieTitle = () => {
 
   return (
     <Article>
-      <Heading large text={movie ? movie.title : ""} />
+      <Heading main text={movie ? movie.title : ""} />
     </Article>
   );
 };

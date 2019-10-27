@@ -4,12 +4,17 @@ import "./Heading.scss";
 
 interface Props {
   text: string;
-  large?: boolean;
+  main?: boolean;
+  error?: boolean;
 }
 
 const Heading = (props: Props) => {
-  return props.large ? (
-    <h1 className="movie-box__heading movie-box__heading--large">
+  return props.main || props.error ? (
+    <h1
+      className={`movie-box__heading ${
+        props.main ? "movie-box__heading--large" : "movie-box__heading--error"
+      }`}
+    >
       {props.text}
     </h1>
   ) : (
