@@ -5,7 +5,11 @@ import "./Image.scss";
 const Image = () => {
   const movie = useSelector((state: any) => state.activeMovie);
 
-  const imageSource = movie
+  console.log(
+    "poster_path",
+    `https://image.tmdb.org/t/p/w780/${movie.poster_path}`
+  );
+  const imageSource = movie.poster_path
     ? `https://image.tmdb.org/t/p/w780/${movie.poster_path}`
     : "/assets/no-poster.jpg";
 
