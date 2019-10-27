@@ -17,7 +17,6 @@ export default function(state: any = initialState, action: any) {
       return {
         ...state,
         activeMovie: state.movieList[action.payload],
-        loading: true,
         movieList: null
       };
     case "GET_GENRES":

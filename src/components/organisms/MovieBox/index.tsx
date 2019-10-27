@@ -20,7 +20,7 @@ const MovieBox = () => {
   }, [movie]);
 
   const welcomeMessage =
-    "Please, use the search bar to find the details of the movie you looking for. :)";
+    "Please, use the search bar to find the details of the movie you looking for.";
 
   return (
     <Main

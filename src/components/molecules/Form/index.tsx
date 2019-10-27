@@ -14,12 +14,6 @@ const Form = () => {
     e.preventDefault();
     resetInputValue();
     handleSearch(searchValue);
-    setTimeout(() => {
-      dispatch({
-        type: "SET_LOADING",
-        payload: false
-      });
-    }, 1000);
     movieList &&
       dispatch({
         type: "GET_ACTIVE_MOVIE",
