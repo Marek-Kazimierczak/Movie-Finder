@@ -1,11 +1,12 @@
 @import "../../../config/variables.scss";
+@import "../../../config/mixins.scss";
 
 .search-bar {
-  position: fixed;
+  @include main-content-position;
   width: 100%;
-
-  z-index: 2;
+  position: fixed;
   box-shadow: $header-shadow;
+  z-index: 2;
 
   @media screen and (min-width: map-get($breakpoints, sm)) {
     position: relative;

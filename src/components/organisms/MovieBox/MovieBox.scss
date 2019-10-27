@@ -1,12 +1,26 @@
 @import "../../../config/variables.scss";
+@import "../../../config/mixins.scss";
 
 .movie-box {
+  @include main-content-position;
   padding: $main-padding * 3 0;
   background: $color-bg-dark;
   @media screen and (min-width: map-get($breakpoints, sm)) {
     margin-top: $main-padding * 2;
     padding: 0;
     display: flex;
+  }
+}
+
+.movie-box--message {
+  padding: $main-padding * 3 $main-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    height: 50vh;
   }
 }
 

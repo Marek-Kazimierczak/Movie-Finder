@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import RatingStar from "../../atoms/RatingStar";
 
 import "./RatingBar.scss";
 
-interface Props {
-  rating: number;
-}
-
-const RatingBar = (props: Props) => {
+const RatingBar = () => {
   const [activeRate, setActiveRate] = useState(0);
   const [halfRate, setHalfRate] = useState(false);
   const [rating, setRating] = useState([]);
+
+  const movie = useSelector((state: any) => state.activeMovie);
 
   const generateRatingValues = () => {
     const values: any = new Array(10).fill(null).map((rate: number, index) => {
@@ -20,18 +19,17 @@ const RatingBar = (props: Props) => {
         ? "half-star"
         : "empty-star";
     });
-
     setRating(values);
   };
 
   useEffect(() => {
-    setActiveRate(Math.round(props.rating));
+    setActiveRate(Math.floor(movie.vote_average));
 
     const isHalfRatingUnit =
-      ((Math.ceil(props.rating * 2) / 2).toFixed(1) as any) % 1 === 0.5;
+      ((Math.ceil(movie.vote_average * 2) / 2).toFixed(1) as any) % 1 === 0.5;
 
     isHalfRatingUnit ? setHalfRate(true) : setHalfRate(false);
-  }, [props.rating]);
+  }, [movie]);
 
   useEffect(() => {
     generateRatingValues();
