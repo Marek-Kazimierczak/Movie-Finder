@@ -25,16 +25,22 @@ const Form = () => {
     )
       .then(res => res.json())
       .then(res => {
-        dispatch({
-          type: "SEARCH_MOVIES_SUCCESS",
-          payload: res.results
-        });
+        if (!res.errors) {
+          dispatch({
+            type: "SEARCH_MOVIES_SUCCESS",
+            payload: res.results
+          });
+        } else {
+          dispatch({
+            type: "SEARCH_MOVIES_FAILURE",
+            error: res.errors[0]
+          });
+        }
       })
       .catch(err => {
-        console.log("genre error", err);
         dispatch({
           type: "SEARCH_MOVIES_FAILURE",
-          error: err.status
+          error: err
         });
       });
   };
