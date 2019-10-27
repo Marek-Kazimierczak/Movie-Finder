@@ -11,7 +11,6 @@ const App = () => {
   const dispatch = useDispatch();
   const loading = useSelector((state: any) => state.loading);
   const errorMessage = useSelector((state: any) => state.errorMessage);
-  const movie = useSelector((state: any) => state.activeMovie);
 
   useEffect(() => {
     fetch(GENRES_API_URL)
@@ -28,20 +27,19 @@ const App = () => {
           error: err.status
         });
       });
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     setTimeout(() => {
       dispatch({ type: "SET_LOADING", payload: false });
     }, 2000);
-  }, []);
+  }, [dispatch]);
 
   return (
     <>
       <SearchBar />
       {loading && !errorMessage && <Spinner overlay />}
       <MovieBox />
-      )}
     </>
   );
 };
