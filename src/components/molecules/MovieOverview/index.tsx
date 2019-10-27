@@ -10,7 +10,7 @@ const MovieOverview = () => {
   return (
     <Article>
       <Heading text="Summary" />
-      <Paragraph text={movie ? movie.overview : ""} />
+      <Paragraph text={movie ? movie.overview : "No description."} />
     </Article>
   );
 };

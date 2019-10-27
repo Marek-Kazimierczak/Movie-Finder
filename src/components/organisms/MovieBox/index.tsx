@@ -15,6 +15,10 @@ const MovieBox = () => {
   const errorMessage = useSelector((state: any) => state.errorMessage);
   const movie = useSelector((state: any) => state.activeMovie);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [movie]);
+
   const welcomeMessage =
     "Please, use the search bar to find the details of the movie you looking for. :)";
 
@@ -29,7 +33,7 @@ const MovieBox = () => {
       ) : !errorMessage && !movie ? (
         <>
           <Heading text="Welcome!" />
-          <Paragraph text={welcomeMessage} />
+          <Paragraph message text={welcomeMessage} />
         </>
       ) : (
         <>

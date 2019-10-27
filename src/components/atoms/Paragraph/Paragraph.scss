@@ -1,5 +1,9 @@
 @import "../../../config/variables.scss";
 
 .movie-box__paragraph {
-    color: $color-secondary;
+  color: $color-secondary;
+}
+
+.movie-box__paragraph--message {
+  text-align: center;
 }

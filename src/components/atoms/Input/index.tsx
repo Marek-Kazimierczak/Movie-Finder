@@ -8,13 +8,18 @@ interface Props {
 
 const Input = (props: Props) => {
   return (
-    <input
-      value={props.value}
-      placeholder="Search a movie..."
-      type="text"
-      className="search-bar__input"
-      onChange={e => props.onChange(e.target.value)}
-    />
+    <>
+      <label className="search-bar__input-label" htmlFor="search-input" />
+      <input
+        autoComplete="off"
+        value={props.value}
+        placeholder="Search a movie..."
+        type="text"
+        id="search-input"
+        className="search-bar__input"
+        onChange={e => props.onChange(e.target.value)}
+      />
+    </>
   );
 };
 

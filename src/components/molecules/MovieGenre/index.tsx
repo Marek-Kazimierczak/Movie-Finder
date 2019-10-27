@@ -11,18 +11,17 @@ const MovieGenre = () => {
   const genres = useSelector((state: any) => state.genres);
 
   useEffect(() => {
-    if (movie) {
-      const currentGenresObjects = genres.filter(
-        (gen: any, idx: number) => movie.genre_ids.indexOf(gen.id) > -1
-      );
+    const currentGenresObjects = genres.filter(
+      (gen: any) => movie.genre_ids.indexOf(gen.id) > -1
+    );
 
-      const genreNames = currentGenresObjects.map(
-        (gen: any, idx: number) =>
-          `${gen.name}${idx < currentGenresObjects.length - 1 ? ", " : ""}`
-      );
-      setGenreList(genreNames);
-    }
-  }, [movie]);
+    const genreNames = currentGenresObjects.map(
+      (gen: any, idx: number) =>
+        `${gen.name}${idx < currentGenresObjects.length - 1 ? ", " : ""}`
+    );
+
+    setGenreList(genreNames.length ? genreNames : "Unknown");
+  }, []);
 
   return (
     <Article>

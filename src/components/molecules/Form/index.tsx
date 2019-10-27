@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Input from "../../atoms/Input";
 import Button from "../../atoms/Button";
 import "./Form.scss";
@@ -7,12 +7,18 @@ import AutocompleteList from "../AutocompleteList";
 
 const Form = () => {
   const [searchValue, setSearchValue] = useState("");
+  const movieList = useSelector((state: any) => state.movieList);
   const dispatch = useDispatch();
 
   const handleSubmit = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    // handleSearch(searchValue);
     resetInputValue();
+    handleSearch(searchValue);
+    movieList &&
+      dispatch({
+        type: "GET_ACTIVE_MOVIE",
+        payload: 0
+      });
   };
 
   const resetInputValue = () => {
