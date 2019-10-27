@@ -1,9 +1,9 @@
 @import "../../../config/variables.scss";
+@import "../../../config/mixins.scss";
 
 .search-bar {
-  margin: 0 auto;
+  @include main-content-position;
   width: 100%;
-  max-width: $page-width-max;
   position: fixed;
   box-shadow: $header-shadow;
   z-index: 2;

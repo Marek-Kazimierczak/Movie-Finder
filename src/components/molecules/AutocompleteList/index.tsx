@@ -6,6 +6,7 @@ import "./AutocompleteList.scss";
 
 interface Props {
   value: string;
+  resetInput: () => void;
 }
 
 const AutocompleteList = (props: Props) => {
@@ -23,6 +24,7 @@ const AutocompleteList = (props: Props) => {
           key={index}
           text={movie.original_title}
           onClick={() => {
+            props.resetInput();
             dispatch({
               type: "GET_ACTIVE_MOVIE",
               payload: index

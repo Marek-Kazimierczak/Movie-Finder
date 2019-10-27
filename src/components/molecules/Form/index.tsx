@@ -11,7 +11,11 @@ const Form = () => {
 
   const handleSubmit = (e: React.SyntheticEvent<EventTarget>) => {
     e.preventDefault();
-    handleSearch(searchValue);
+    // handleSearch(searchValue);
+    resetInputValue();
+  };
+
+  const resetInputValue = () => {
     setSearchValue("");
   };
 
@@ -53,7 +57,7 @@ const Form = () => {
     <form className="search-bar__form" onSubmit={handleSubmit}>
       <Input onChange={setSearchValue} value={searchValue} />
       <Button />
-      <AutocompleteList value={searchValue} />
+      <AutocompleteList resetInput={resetInputValue} value={searchValue} />
     </form>
   );
 };

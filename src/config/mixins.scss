@@ -1,0 +1,6 @@
+@import "variables";
+
+@mixin main-content-position {
+  margin: 0 auto;
+  max-width: $page-width-max;
+}

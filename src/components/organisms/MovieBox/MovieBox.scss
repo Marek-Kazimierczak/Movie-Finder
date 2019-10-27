@@ -1,8 +1,8 @@
 @import "../../../config/variables.scss";
+@import "../../../config/mixins.scss";
 
 .movie-box {
-  margin: 0 auto;
-  max-width: $page-width-max;
+  @include main-content-position;
   padding: $main-padding * 3 0;
   background: $color-bg-dark;
   @media screen and (min-width: map-get($breakpoints, sm)) {
