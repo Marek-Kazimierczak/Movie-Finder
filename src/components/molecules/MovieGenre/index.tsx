@@ -21,7 +21,7 @@ const MovieGenre = () => {
     );
 
     setGenreList(genreNames.length ? genreNames : "Unknown");
-  }, []);
+  }, [genres, movie.genre_ids]);
 
   return (
     <Article>

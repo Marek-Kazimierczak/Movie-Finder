@@ -17,6 +17,7 @@ export default function(state: any = initialState, action: any) {
       return {
         ...state,
         activeMovie: state.movieList[action.payload],
+        loading: true,
         movieList: null
       };
     case "GET_GENRES":
@@ -27,25 +28,21 @@ export default function(state: any = initialState, action: any) {
     case "GET_GENRES_FAILURE":
       return {
         ...state,
-        loading: false,
         errorMessage: action.error
       };
     case "SEARCH_MOVIES_REQUEST":
       return {
         ...state,
-        loading: true,
         errorMessage: null
       };
     case "SEARCH_MOVIES_SUCCESS":
       return {
         ...state,
-        loading: false,
         movieList: action.payload
       };
     case "SEARCH_MOVIES_FAILURE":
       return {
         ...state,
-        loading: false,
         activeMovie: null,
         errorMessage: action.error
       };

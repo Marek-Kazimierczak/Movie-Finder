@@ -29,6 +29,12 @@ const AutocompleteList = (props: Props) => {
               type: "GET_ACTIVE_MOVIE",
               payload: index
             });
+            setTimeout(() => {
+              dispatch({
+                type: "SET_LOADING",
+                payload: false
+              });
+            }, 1000);
           }}
         />
       ))
