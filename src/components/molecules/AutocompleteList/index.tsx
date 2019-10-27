@@ -24,7 +24,7 @@ const AutocompleteList = (props: Props) => {
           text={movie.original_title}
           onClick={() => {
             dispatch({
-              type: "GET_MOVIE",
+              type: "GET_ACTIVE_MOVIE",
               payload: index
             });
           }}

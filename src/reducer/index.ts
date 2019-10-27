@@ -13,7 +13,7 @@ export default function(state: any = initialState, action: any) {
         ...state,
         loading: action.payload
       };
-    case "GET_MOVIE":
+    case "GET_ACTIVE_MOVIE":
       return {
         ...state,
         activeMovie: state.movieList[action.payload],
@@ -23,6 +23,12 @@ export default function(state: any = initialState, action: any) {
       return {
         ...state,
         genres: [...action.payload]
+      };
+    case "GET_GENRES_FAILURE":
+      return {
+        ...state,
+        loading: false,
+        errorMessage: action.error
       };
     case "SEARCH_MOVIES_REQUEST":
       return {

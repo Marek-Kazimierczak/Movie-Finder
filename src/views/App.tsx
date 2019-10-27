@@ -25,7 +25,7 @@ const App = () => {
       })
       .catch(err => {
         dispatch({
-          type: "SEARCH_MOVIES_FAILURE",
+          type: "GET_GENRES_FAILURE",
           error: err.status
         });
       });

@@ -12,7 +12,7 @@ const Heading = (props: Props) => {
   return props.main || props.error ? (
     <h1
       className={`movie-box__heading ${
-        props.main ? "movie-box__heading--large" : "movie-box__heading--error"
+        props.main ? "movie-box__heading--main" : "movie-box__heading--error"
       }`}
     >
       {props.text}
