@@ -46,6 +46,7 @@ export default function(state: any = initialState, action: any) {
       return {
         ...state,
         loading: false,
+        activeMovie: null,
         errorMessage: action.error
       };
     default:

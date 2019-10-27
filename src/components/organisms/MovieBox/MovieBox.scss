@@ -12,6 +12,18 @@
   }
 }
 
+.movie-box--message {
+  padding: $main-padding * 3 $main-padding;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    height: 50vh;
+  }
+}
+
 .movie-box__image-wrapper,
 .movie-box__details {
   padding: $mobile-padding;

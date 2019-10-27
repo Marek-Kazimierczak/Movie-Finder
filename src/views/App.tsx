@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import SearchBar from "../components/organisms/SearchBar";
 import MovieBox from "../components/organisms/MovieBox";
-import MessageBox from "../components/organisms/MessageBox";
 import Spinner from "../components/atoms/Spinner";
 
 const GENRES_API_URL =
@@ -41,10 +40,7 @@ const App = () => {
     <>
       <SearchBar />
       {loading && !errorMessage && <Spinner overlay />}
-      {(errorMessage && !movie) || (!errorMessage && !movie) ? (
-        <MessageBox />
-      ) : (
-        <MovieBox />
+      <MovieBox />
       )}
     </>
   );
