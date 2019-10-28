@@ -1,0 +1,15 @@
+@import "../../../config/variables.scss";
+
+.movie-box__image {
+  text-align: center;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    text-align: left;
+    height: 500px;
+  }
+}
+
+.movie-box__image-element {
+  max-height: 100%;
+  width: auto;
+}

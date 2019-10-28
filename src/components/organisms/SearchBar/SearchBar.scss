@@ -1,0 +1,15 @@
+@import "../../../config/variables.scss";
+@import "../../../config/mixins.scss";
+
+.search-bar {
+  @include main-content-position;
+  width: 100%;
+  position: fixed;
+  box-shadow: $header-shadow;
+  z-index: 2;
+
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    position: relative;
+    padding-top: $main-padding;
+  }
+}

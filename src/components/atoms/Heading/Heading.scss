@@ -1,0 +1,20 @@
+@import "../../../config/variables.scss";
+
+.movie-box__heading {
+  color: $color-primary;
+}
+
+.movie-box__heading--main,
+.movie-box__heading--error {
+  padding-bottom: $main-padding;
+}
+
+.movie-box__heading--main {
+  border-bottom: 2px solid $color-primary;
+}
+
+.movie-box__heading--error {
+  text-align: center;
+  color: $color-error;
+  border-bottom: 2px solid $color-error;
+}
