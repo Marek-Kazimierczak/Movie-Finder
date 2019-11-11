@@ -30,3 +30,7 @@ Then your default browser will open automatically and run the app on a local ser
 Finally, you can view **Movie Finder** in the browser -  http://localhost:3000/.
 
 ## This project is already deployed. You can search for your favorite movie right away in here: http://moviefinderapp.surge.sh/
+
+
+![Screenshot-1](https://user-images.githubusercontent.com/46679378/68588924-f45db000-048a-11ea-9e63-2e6d2541cff8.jpg)
+![Screenshot-2](https://user-images.githubusercontent.com/46679378/68589019-296a0280-048b-11ea-8ffc-04dd3196836d.png)
